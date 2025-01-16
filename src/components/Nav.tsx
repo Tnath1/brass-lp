@@ -47,10 +47,10 @@ const Nav = () => {
               Customers
             </a>
             <div className="text-[14px] font-[600] cursor-pointer mr-[32px]">
-              Products{" "}
+              Products
             </div>
             <div className="text-[14px] font-[600] cursor-pointer">
-              Company{" "}
+              Company
             </div>
           </div>
           <div className=" flex justify-center items-center  ">
@@ -82,3 +82,124 @@ const Nav = () => {
 };
 
 export default Nav;
+
+
+
+
+
+
+
+// import React, { useState, useRef } from "react";
+
+// const Nav: React.FC = () => {
+//   const [isDropdownVisibleIndustry, setisDropdownVisibleIndustry] = useState(false);
+//   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+//   const handleMouseEnter = () => {
+//     // Clear the timer to prevent hiding the dropdown
+//     if (timerRef.current) {
+//       clearTimeout(timerRef.current);
+//       timerRef.current = null;
+//     }
+//     setisDropdownVisibleIndustry(true);
+//   };
+
+//   const handleMouseLeave = () => {
+//     // Set a timer to delay hiding the dropdown
+//     timerRef.current = setTimeout(() => {
+//       setisDropdownVisibleIndustry(false);
+//     }, 100); // Adjust the delay (e.g., 300ms) as needed
+//   };
+
+//   return (
+//     <>
+// <div className="bg-black z-50 text-white w-full h-[80px] relative">
+//       <nav className="flex justify-between items-center max-w-[950px] lgg:max-w-[1150px] mx-auto h-full">
+//         <div className="flex justify-center items-center">
+//           <a href="" className="mr-[48px]">
+//             <div>
+//               {/* Add your SVG logo here */}
+//               <svg width="92" height="22" viewBox="0 0 92 22" fill="none">
+//                 <path
+//                   d="M0.00699384 10.7163H10.0388L7.89168 12.8634H0.00699384V16.064H4.69112L0 20.7551L1.00624 21.7605L5.69648 17.0694V21.7535H8.89704V13.8688L11.031 11.7357V21.7535H15.2982V6.44922H0.00699384V10.7163Z"
+//                   fill="#0BCE5A"
+//                 ></path>
+//               </svg>
+//             </div>
+//           </a>
+//           <div
+//             className="relative text-[14px] mr-[32px] font-[600] cursor-pointer"
+//             onMouseEnter={handleMouseEnter}
+//             onMouseLeave={handleMouseLeave}
+//           >
+//             Industry
+//             {isDropdownVisibleIndustry && (
+//               <div
+//                 className="absolute top-full left-0 mt-2 w-[200px] bg-white text-black rounded shadow-lg max-h-[200px] overflow-y-auto z-50"
+//                 onMouseEnter={handleMouseEnter} // Keep dropdown open when hovering options
+//                 onMouseLeave={handleMouseLeave} // Delay dropdown hide when leaving options
+//               >
+//                 <ul className="py-2">
+//                   <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer">
+//                     Option 1
+//                   </li>
+//                   <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer">
+//                     Option 2
+//                   </li>
+//                   <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer">
+//                     Option 3
+//                   </li>
+                 
+//                 </ul>
+//               </div>
+//             )}
+//           </div>
+//           <a
+//             href=""
+//             className="mr-[32px] text-[14px] font-[600] cursor-pointer"
+//           >
+//             Customers
+//           </a>
+//           <div className="text-[14px] font-[600] cursor-pointer mr-[32px]">
+//             Products
+//             {/* {isDropdownVisibleCustomers && (
+//               <div
+//                 className="absolute top-full left-0 mt-2 w-[200px] bg-white text-black rounded shadow-lg max-h-[200px] overflow-y-auto z-50"
+//                 onMouseEnter={handleMouseEnter} // Keep dropdown open when hovering options
+//                 onMouseLeave={handleMouseLeave} // Delay dropdown hide when leaving options
+//               >
+//                 <ul className="py-2">
+//                   <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer">
+//                     Option 1
+//                   </li>
+//                   <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer">
+//                     Option 2
+//                   </li>
+//                   <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer">
+//                     Option 3
+//                   </li>
+                 
+//                 </ul>
+//               </div>
+//             )} */}
+
+//           </div>
+//           <div className="text-[14px] font-[600] cursor-pointer">Company</div>
+//         </div>
+//         <div className="flex justify-center items-center">
+//           <div className="text-[14px] font-[600] cursor-pointer">Resources</div>
+//           <div className="text-[14px] font-[600] cursor-pointer ml-[32px]">
+//             Login
+//           </div>
+//           <div className="text-[14px] font-[600] cursor-pointer items-center rounded-[5px] ml-[32px] px-[32px] py-[14px] bg-[#0bce5a] text-[#fff]">
+//             Open an account
+//           </div>
+//         </div>
+//       </nav>
+//     </div>
+//     <News/>
+//     </>
+//   );
+// };
+
+// export default Nav;
