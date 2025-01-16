@@ -1,3 +1,5 @@
+import Heroimg from "/img/hero.webp";
+
 const Hero = () => {
   return (
     <section className="pb-[7.5rem] pt-[64px] bg-[#060809] text-[#fff] w-full ">
@@ -239,10 +241,87 @@ const Hero = () => {
             </a>
           </section>
         </div>
-      </div>
-      
+        {/* <div className="media_container col-start-7 col-span-6  relative">
+          <span className="img-container relative block">
+            <picture>
+              <source
+                type="image/webp"
+                srcSet={`${Heroimg} 302w, ${Heroimg} 603w, ${Heroimg} 1206w`}
+                sizes="(min-width: 1206px) 1206px, 100vw"
+              />
+              <img
+                className="rounded-[10px] w-full h-full object-cover"
+                data-gatsby-image-ssr=""
+                data-main-image=""
+                style={{ opacity: 1 }}
+                sizes="(min-width: 1206px) 1206px, 100vw"
+                decoding="async"
+                loading="eager"
+                src={Heroimg}
+                srcSet={`${Heroimg} 302w, ${Heroimg} 603w, ${Heroimg} 1206w`}
+                alt="hero"
+              />
+            </picture>
+            <span className="absolute inset-0 bg-black bg-opacity-10 rounded-[10px]"></span>
+          </span>
+          <div className="flex justify-center items-center gap-[7px] absolute">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32ZM13.5097 10.6126L21.6902 15.6119C21.7567 15.6525 21.8116 15.7095 21.8497 15.7774C21.8877 15.8453 21.9077 15.9219 21.9077 15.9998C21.9077 16.0776 21.8877 16.1542 21.8497 16.2221C21.8116 16.29 21.7567 16.347 21.6902 16.3876L13.5097 21.387C13.4408 21.4291 13.362 21.4521 13.2812 21.4536C13.2005 21.4551 13.1208 21.4351 13.0504 21.3956C12.9799 21.3561 12.9213 21.2985 12.8805 21.2288C12.8397 21.1592 12.8182 21.0799 12.8182 20.9991V11.0004C12.8182 10.9197 12.8397 10.8404 12.8805 10.7707C12.9213 10.701 12.9799 10.6435 13.0504 10.604C13.1208 10.5645 13.2005 10.5444 13.2812 10.5459C13.362 10.5475 13.4408 10.5705 13.5097 10.6126Z"
+                fill="white"
+              ></path>
+            </svg>
+            <div>
+              <h4>Play this video</h4>
+              <p className="Hero-module--Hero_image_action_sub--i3SF9">
+                To see why we built brass
+              </p>
+            </div>
+          </div>
+        </div> */}
 
-      
+        <div className="media_container col-start-7 col-span-6  relative">
+          <span className="img-container relative block">
+            <picture>
+              <source
+                type="image/webp"
+                srcSet={`${Heroimg} 302w, ${Heroimg} 603w, ${Heroimg} 1206w`}
+                sizes="(min-width: 1206px) 1206px, 100vw"
+              />
+              <img
+                className="rounded-[10px] w-full h-full object-cover"
+                data-gatsby-image-ssr=""
+                data-main-image=""
+                style={{ opacity: 1 }}
+                sizes="(min-width: 1206px) 1206px, 100vw"
+                decoding="async"
+                loading="eager"
+                src={Heroimg}
+                srcSet={`${Heroimg} 302w, ${Heroimg} 603w, ${Heroimg} 1206w`}
+                alt="hero"
+              />
+            </picture>
+            <span className="absolute inset-0 bg-black bg-opacity-30 rounded-[10px]"></span>
+          </span>
+          {/* Video SVG Container */}
+          <div className="flex cursor-pointer  items-center gap-[7px] absolute bottom-8 left-6 text-white">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32ZM13.5097 10.6126L21.6902 15.6119C21.7567 15.6525 21.8116 15.7095 21.8497 15.7774C21.8877 15.8453 21.9077 15.9219 21.9077 15.9998C21.9077 16.0776 21.8877 16.1542 21.8497 16.2221C21.8116 16.29 21.7567 16.347 21.6902 16.3876L13.5097 21.387C13.4408 21.4291 13.362 21.4521 13.2812 21.4536C13.2005 21.4551 13.1208 21.4351 13.0504 21.3956C12.9799 21.3561 12.9213 21.2985 12.8805 21.2288C12.8397 21.1592 12.8182 21.0799 12.8182 20.9991V11.0004C12.8182 10.9197 12.8397 10.8404 12.8805 10.7707C12.9213 10.701 12.9799 10.6435 13.0504 10.604C13.1208 10.5645 13.2005 10.5444 13.2812 10.5459C13.362 10.5475 13.4408 10.5705 13.5097 10.6126Z"
+                fill="white"
+              ></path>
+            </svg>
+            <div>
+              <h4 className="text-lg font-bold">Play this video</h4>
+              <p className="text-sm">To see why we built brass</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };
