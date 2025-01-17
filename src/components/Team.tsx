@@ -7,7 +7,7 @@ const Team = () => {
         <div className=" lg:min-h-[720px]  grid gap-[3rem_1.875rem] grid-cols-12 mr-[calc(50%-626px)] max-w-fit pl-0 w-full ">
           <div className="col-start-1 col-span-7 sticky top-20">
             <span className="md:overflow-hidden md:align-top md:object-center md:object-cover md:w-full md:z-10 md:flex md:items-center md:bg-[#060809] md:sticky md:top-[80px] md:h-[calc(100vh-80px)]">
-              <img className="h-full" src={support} alt="" />
+              <img className="h-full object-cover" src={support} alt="" />
             </span>
           </div>
           <header className="col-start-8 col-span-6 m-auto my-0 max-w-[584px] w-full">
