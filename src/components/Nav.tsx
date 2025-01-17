@@ -2,7 +2,7 @@ import News from "./News";
 
 const Nav = () => {
   return (
-    <>
+    <div className="w-full fixed z-[9999]">
       <div className="bg-black z-50  text-white w-full h-[80px]    ">
       <nav className="flex justify-between items-center  max-w-[950px]  lgg:max-w-[1150px] mx-auto h-full ">
           <div className="  flex justify-center items-center ">
@@ -77,7 +77,7 @@ const Nav = () => {
         </nav>
       </div>
       <News />
-    </>
+    </div>
   );
 };
 

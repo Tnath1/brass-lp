@@ -2,7 +2,7 @@ import Heroimg from "/img/hero.webp";
 
 const Hero = () => {
   return (
-    <section className="pb-[7.5rem] pt-[64px] bg-[#060809] text-[#fff] w-full ">
+    <section className="pb-[7.5rem] pt-[11.4rem]  bg-[#060809] text-[#fff] w-full ">
       <div className="grid grid-cols-12 gap-x-[30px] px-[120px] m-auto ">
         <div className="grid-span-1-6 Hero-module--Hero_content flex flex-col justify-between col-span-6">
           <header className="Hero-module--Hero_header max-w-[523px] w-full text-[#fff] ">
@@ -303,7 +303,7 @@ const Hero = () => {
                 alt="hero"
               />
             </picture>
-            <span className="absolute inset-0 bg-black bg-opacity-30 rounded-[10px]"></span>
+            <span className="absolute inset-0 bg-black bg-opacity-0 rounded-[10px]"></span>
           </span>
           {/* Video SVG Container */}
           <div className="flex cursor-pointer  items-center gap-[7px] absolute bottom-8 left-6 text-white">
