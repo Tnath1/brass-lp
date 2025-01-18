@@ -59,17 +59,22 @@ const Accordion = () => {
     {
       title: "Who can sign up on Brass?",
       content:
-        "We currently only serve registered businesses in Nigeria. We support sole traders, NGOs, partnerships, and limited liability companies. However, If your business is not yet registered, Brass can help you get your desired business registered on time with our partners.",
+        "We currently only serve registered businesses in Nigeria. We support sole traders, NGOs, partnerships and limited liability companies. However, If your business is not yet registered, Brass can help you get your desired business registered on time with our partners.",
     },
     {
-      title: "How does Brass work?",
+      title: "How much do I pay to sign up at Brass??",
       content:
-        "Brass provides a seamless platform for businesses to manage their finances and payments. It's designed to work for different types of businesses in Nigeria, whether you are a sole trader or a registered company.",
+        "You do not pay for signing up for an account at Brass",
     },
     {
-      title: "Is Brass secure?",
+      title: "What do I need to open an account?",
       content:
-        "Yes, Brass takes security seriously. We employ the latest encryption and security protocols to ensure that your data is protected. Your transactions and personal information are safe with us.",
+        "You will need government-issued IDs (Including BVN) and your company's incorporation documents.",
+    },
+    {
+      title: "How do you ensure safekeeping of my data and money?",
+      content:
+        "We have introduced Two factor Authentication(2FA) for an extra level of security. This authentication is done using digital OTP apps like Google authenticator and Authy instead of hackable channels such as the SMS.",
     },
   ];
 

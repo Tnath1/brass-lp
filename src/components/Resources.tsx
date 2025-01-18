@@ -1,6 +1,6 @@
 import Naira from "/img/naira.webp";
 import Idea from "/img/idea.webp";
-import Business from "/img/business.webp";
+import Business from "/img/business (1).png";
 
 const Resources = () => {
   return (
