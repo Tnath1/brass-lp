@@ -84,11 +84,11 @@ const Resources = () => {
               </div>
               <div className="p-[1.5rem]">
                 <h4 className="text-left text-[#060809] text-[18px] font-[600] tracking[-0.2px] leading-[26px] mb-1">
-                  Why you need a separate business current account
+                  Working on the right idea
                 </h4>
                 <div className="RelatedPostCard-module--RelatedPostCard_content_excerpt--EXYe1">
                   <p className="text-left text-[15px] font-[500] tracking[-0.12px] leading-[20px] text-[#060809]">
-                    The reason for them and how to open a Brass account
+                    How to figure out the right business idea for you.
                   </p>
                 </div>
               </div>
@@ -102,13 +102,13 @@ const Resources = () => {
           >
             <div className="border border-[#e9ebec] rounded-[0.5rem] ">
               <div className="">
-                <span
-                  data-gatsby-image-wrapper=""
-                  className=""
-                >
-                  <div className="" style={{ maxWidth: "1140px", display: "block" }}>
+                <span data-gatsby-image-wrapper="" className="">
+                  <div
+                    className=""
+                    style={{ maxWidth: "1140px", display: "block" }}
+                  >
                     <img
-                    className="rounded-t-[0.5rem]"
+                      className="rounded-t-[0.5rem]"
                       alt=""
                       role="presentation"
                       aria-hidden="true"
@@ -117,20 +117,20 @@ const Resources = () => {
                         maxWidth: "100%",
                         display: "block",
                         position: "static",
-                        objectFit:"cover",
-                        height: "100%"
+                        objectFit: "cover",
+                        height: "100%",
                       }}
                     />
                   </div>
                 </span>
               </div>
-              <div className="p-[1.5rem]">
+              <div className="p-[1.5rem] h-auto">
                 <h4 className="text-left text-[#060809] text-[18px] font-[600] tracking[-0.2px] leading-[26px] mb-1">
-                  Why you need a separate business current account
+                  What you need to know about business credit
                 </h4>
                 <div className="RelatedPostCard-module--RelatedPostCard_content_excerpt--EXYe1">
                   <p className="text-left text-[15px] font-[500] tracking[-0.12px] leading-[20px] text-[#060809]">
-                    The reason for them and how to open a Brass account
+                    How business credit can work for you.
                   </p>
                 </div>
               </div>
