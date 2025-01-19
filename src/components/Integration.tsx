@@ -1,6 +1,6 @@
 const Integration = () => {
   return (
-    <section>
+    <section className="md:pt-[200px] md:pb-0">
       <div className="px-[120px] ">
         <header>
           <h2 className="text-[30px] font-semibold leading-[41px] mb-4 tracking-[-1.21px]">
