@@ -388,6 +388,13 @@ const Footer = () => {
                 </svg>
               </a>
             </div>
+
+            <a
+              className="fixed bottom-0 left-0 right-0 z-[100] bg-[#0bce5a] text-white flex items-center justify-center text-[15px] font-semibold leading-[20px] tracking-[-0.12px] h-[80px] mt-[72px] w-full md:hidden"
+              href="#"
+            >
+              <span>Open an account in 10 minutes</span>
+            </a>
           </div>
         </section>
         <section className="lg:mt-[64px] text-white text-[15px] font-normal tracking-[-0.12px] leading-[20px]">

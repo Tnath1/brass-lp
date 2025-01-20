@@ -3,13 +3,13 @@ import Heroimg from "/img/hero.webp";
 const Hero = () => {
   return (
     <section className="pb-[7.5rem] pt-[11.4rem]  bg-[#060809] text-[#fff] w-full ">
-      <div className="grid grid-cols-12 gap-x-[30px] px-[120px] m-auto ">
-        <div className="grid-span-1-6 Hero-module--Hero_content flex flex-col justify-between col-span-6">
-          <header className="Hero-module--Hero_header max-w-[523px] w-full text-[#fff] ">
-            <h1 className="Hero-module--Hero_header text-[60px] font-semibold tracking-[-1.21px] leading-[64px]">
+      <div className="md:grid md:grid-cols-12 md:gap-x-[30px] lg:px-[120px] px-[32px] m-auto flex  flex-col-reverse ">
+        <div className="grid-span-1-6  flex flex-col justify-between col-span-6">
+          <header className=" lg:mt-0 mt-[2.5rem] max-w-[523px] w-full text-[#fff] ">
+            <h1 className=" lg:text-[60px] md:text-[45px] text-[30px] font-semibold tracking-[-1.21px] leading-[64px]">
               Banking that works for your business
             </h1>
-            <p className="mt-[1.5rem] mb-[3rem] text-[18px] font-normal tracking-[-0.2px] leading-[26px]">
+            <p className="mt-[1.5rem] mb-[3rem] text-[15px] lg:text-[18px] font-normal tracking-[-0.2px] leading-[26px]">
               Do more with a business account that comes with top-end financial
               tools and integrations to help grow your business.
             </p>
@@ -17,9 +17,9 @@ const Hero = () => {
               type="button"
               className="_0OJEu _tuZ1s Hero-module--Hero_header_link--j3FBj"
               target="_blank"
-              href="https://app.trybrass.com/signup"
+              href="/signup"
             >
-              <div className="bg-[#0bce5a] text-white rounded-[5px] tracking-[-0.07px] leading-none max-h-[50px] outline-none overflow-visible py-[14px] px-[32px] relative text-center no-underline w-fit transition-all duration-200 text-[14px] font-medium">
+              <div className="bg-[#0bce5a] text-white md:block hidden rounded-[5px] tracking-[-0.07px] leading-none max-h-[50px] outline-none overflow-visible py-[14px] px-[32px] relative text-center no-underline w-fit transition-all duration-200 text-[14px] font-medium">
                 Open an account in 10 minutes
               </div>
             </a>
@@ -281,9 +281,8 @@ const Hero = () => {
             </div>
           </div>
         </div> */}
-
-        <div className="media_container col-start-7 col-span-6  relative">
-          <span className="img-container relative block">
+        <div className="col-start-7 col-span-6 lg:max-h-full l:h-[400px] relative flex items-end">
+          <span className="img-container relative block w-full h-full">
             <picture>
               <source
                 type="image/webp"
@@ -305,8 +304,9 @@ const Hero = () => {
             </picture>
             <span className="absolute inset-0 bg-black bg-opacity-0 rounded-[10px]"></span>
           </span>
+
           {/* Video SVG Container */}
-          <div className="flex cursor-pointer  items-center gap-[7px] absolute bottom-8 left-6 text-white">
+          <div className="absolute bottom-8 left-6 flex items-center gap-[7px] text-white cursor-pointer">
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
               <path
                 fillRule="evenodd"

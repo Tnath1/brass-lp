@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 
 const CallToAction = () => {
   return (
@@ -16,7 +18,7 @@ const CallToAction = () => {
       <a 
         className="rounded-[5px] items-center flex text-[14px] font-[500] justify-center max-h-[50px] py-[14px] px-[32px] text-center cursor-pointer bg-[#0bce5a] text-[#fff] " 
         target="_blank" 
-        href="https://app.trybrass.com/signup" 
+        href="/signup" 
         rel="noopener noreferrer"
       >
         <span className="_XqFJG">Get started in minutes</span>
