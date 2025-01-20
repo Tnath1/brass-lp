@@ -1,12 +1,63 @@
+import { Link } from "react-router-dom";
+import { useState } from "react";
 import News from "./News";
+import Accordion from "./reusable/Accordions";
 
 const Nav = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const toggleMobileDiv = () => {
+    setIsOpen((prevState) => !prevState);
+  };
+
+  const faqItems = [
+    {
+      title: "Industry",
+      content:
+        "We cu and ",
+    },
+    {
+      title: "Customers",
+      content: "You do not pay for signing up for an account at Brass.",
+    },
+    {
+      title: "Products",
+      content:
+        "You will need government-issued IDs (Including BVN) and your company's incorporation documents.",
+    },
+    {
+      title: "Companies",
+      content:
+        "We have introduced Two Factor Authentication (2FA) for an extra level of security.",
+    },
+    {
+      title: "Resources",
+      content:
+        "We have introduced Two Factor Authentication (2FA) for an extra level of security.",
+    },
+    {
+      title: "Country",
+      content:
+        "We have introduced Two Factor Authentication (2FA) for an extra level of security.",
+    },
+    {
+      title: "Login",
+      content:
+        "tgtetaer",
+    },
+    {
+      title: "Open an account",
+      content:
+        "We have introduced Two Factor Authentication (2FA) for an extra level of security.",
+    },
+  ];
+
   return (
     <div className="w-full fixed z-[9999]">
       <div className="bg-black z-50  text-white w-full h-[80px]    ">
-      <nav className="flex justify-between items-center  max-w-[950px]  lgg:max-w-[1150px] mx-auto h-full ">
+        <nav className="flex justify-between items-center  lg:pl-[120px] lg:px-0 px-[32px] mx-auto h-full ">
           <div className="  flex justify-center items-center ">
-            <a href="" className="mr-[48px] ">
+            <Link to="/" className="mr-[48px] ">
               <div>
                 <svg width="92" height="22" viewBox="0 0 92 22" fill="none">
                   <path
@@ -35,34 +86,40 @@ const Nav = () => {
                   ></path>
                 </svg>
               </div>
-            </a>
+            </Link>
 
-            <div className="text-[14px] mr-[32px] font-[600] cursor-pointer">
+            <div className=" lg:block hidden text-[14px] mr-[32px] font-[600] cursor-pointer">
               Industry
             </div>
             <a
               href=""
-              className="mr-[32px] text-[14px] font-[600] cursor-pointer"
+              className=" lg:block hidden mr-[32px] text-[14px] font-[600] cursor-pointer"
             >
               Customers
             </a>
-            <div className="text-[14px] font-[600] cursor-pointer mr-[32px]">
+            <div className=" lg:block hidden text-[14px] font-[600] cursor-pointer mr-[32px]">
               Products
             </div>
-            <div className="text-[14px] font-[600] cursor-pointer">
+            <div className=" lg:block hidden text-[14px] font-[600] cursor-pointer">
               Company
             </div>
           </div>
-          <div className=" flex justify-center items-center  ">
+          <div className=" lg:flex hidden justify-center items-center  ">
             <div className="text-[14px] font-[600] cursor-pointer">
               Resources
             </div>
-            <div className="text-[14px] font-[600] cursor-pointer ml-[32px]">
+            <Link
+              to="/Login"
+              className="text-[14px] font-[600] cursor-pointer ml-[32px]"
+            >
               Login
-            </div>
-            <div className=" text-[14px] font-[600] cursor-pointer items-center rounded-[5px] ml-[32px] px-[32px] py-[14px]  bg-[#0bce5a] text-[#fff]">
+            </Link>
+            <Link
+              to="/signUp"
+              className=" text-[14px] font-[600] cursor-pointer items-center rounded-[5px] ml-[32px] px-[32px] py-[14px]  bg-[#0bce5a] text-[#fff]"
+            >
               OPen an account
-            </div>
+            </Link>
             <div className="CountrySwitcher-module ml-[12px] ">
               <svg width="32.6" height="22.5" viewBox="0 0 21 15" fill="none">
                 <path
@@ -73,133 +130,54 @@ const Nav = () => {
               </svg>
             </div>
           </div>
-          <div className="mobile hidden"></div>
+          <button
+            type="button"
+            className="Hand_burger_menu group relative z-[102] flex flex-col justify-center items-center gap-1 lg:hidden p-2"
+            aria-haspopup="true"
+            aria-expanded={isOpen}
+            aria-controls="site-nav"
+            aria-label="Toggle navigation menu"
+            onClick={toggleMobileDiv}
+          >
+            {/* Top Line */}
+            <div
+              className={`bg-white w-8 h-[3px] rounded transition-all duration-300 ease-[cubic-bezier(0.455,0.03,0.515,0.955)] ${
+                isOpen
+                  ? "translate-y-[7px] rotate-45"
+                  : "translate-y-0 rotate-0"
+              }`}
+            ></div>
+
+            {/* Middle Line */}
+            <div
+              className={`bg-white w-8 h-[3px] rounded transition-all duration-300 ease-[cubic-bezier(0.455,0.03,0.515,0.955)] ${
+                isOpen ? "opacity-0" : "opacity-100"
+              }`}
+            ></div>
+
+            {/* Bottom Line */}
+            <div
+              className={`bg-white w-8 h-[3px] rounded transition-all duration-300 ease-[cubic-bezier(0.455,0.03,0.515,0.955)] ${
+                isOpen
+                  ? "-translate-y-[7px] -rotate-45"
+                  : "translate-y-0 rotate-0"
+              }`}
+            ></div>
+          </button>
         </nav>
       </div>
-      <News />
+
+      <div className="mobile relative h-screen">
+        <News />
+
+        {isOpen && (
+          <div className="absolute  top-0 w-full h-screen">
+            <Accordion items={faqItems} allowMultiple={false} />
+          </div>
+        )}
+      </div>
     </div>
   );
 };
 
 export default Nav;
-
-
-
-
-
-
-
-// import React, { useState, useRef } from "react";
-
-// const Nav: React.FC = () => {
-//   const [isDropdownVisibleIndustry, setisDropdownVisibleIndustry] = useState(false);
-//   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-//   const handleMouseEnter = () => {
-//     // Clear the timer to prevent hiding the dropdown
-//     if (timerRef.current) {
-//       clearTimeout(timerRef.current);
-//       timerRef.current = null;
-//     }
-//     setisDropdownVisibleIndustry(true);
-//   };
-
-//   const handleMouseLeave = () => {
-//     // Set a timer to delay hiding the dropdown
-//     timerRef.current = setTimeout(() => {
-//       setisDropdownVisibleIndustry(false);
-//     }, 100); // Adjust the delay (e.g., 300ms) as needed
-//   };
-
-//   return (
-//     <>
-// <div className="bg-black z-50 text-white w-full h-[80px] relative">
-//       <nav className="flex justify-between items-center max-w-[950px] lgg:max-w-[1150px] mx-auto h-full">
-//         <div className="flex justify-center items-center">
-//           <a href="" className="mr-[48px]">
-//             <div>
-//               {/* Add your SVG logo here */}
-//               <svg width="92" height="22" viewBox="0 0 92 22" fill="none">
-//                 <path
-//                   d="M0.00699384 10.7163H10.0388L7.89168 12.8634H0.00699384V16.064H4.69112L0 20.7551L1.00624 21.7605L5.69648 17.0694V21.7535H8.89704V13.8688L11.031 11.7357V21.7535H15.2982V6.44922H0.00699384V10.7163Z"
-//                   fill="#0BCE5A"
-//                 ></path>
-//               </svg>
-//             </div>
-//           </a>
-//           <div
-//             className="relative text-[14px] mr-[32px] font-[600] cursor-pointer"
-//             onMouseEnter={handleMouseEnter}
-//             onMouseLeave={handleMouseLeave}
-//           >
-//             Industry
-//             {isDropdownVisibleIndustry && (
-//               <div
-//                 className="absolute top-full left-0 mt-2 w-[200px] bg-white text-black rounded shadow-lg max-h-[200px] overflow-y-auto z-50"
-//                 onMouseEnter={handleMouseEnter} // Keep dropdown open when hovering options
-//                 onMouseLeave={handleMouseLeave} // Delay dropdown hide when leaving options
-//               >
-//                 <ul className="py-2">
-//                   <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer">
-//                     Option 1
-//                   </li>
-//                   <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer">
-//                     Option 2
-//                   </li>
-//                   <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer">
-//                     Option 3
-//                   </li>
-                 
-//                 </ul>
-//               </div>
-//             )}
-//           </div>
-//           <a
-//             href=""
-//             className="mr-[32px] text-[14px] font-[600] cursor-pointer"
-//           >
-//             Customers
-//           </a>
-//           <div className="text-[14px] font-[600] cursor-pointer mr-[32px]">
-//             Products
-//             {/* {isDropdownVisibleCustomers && (
-//               <div
-//                 className="absolute top-full left-0 mt-2 w-[200px] bg-white text-black rounded shadow-lg max-h-[200px] overflow-y-auto z-50"
-//                 onMouseEnter={handleMouseEnter} // Keep dropdown open when hovering options
-//                 onMouseLeave={handleMouseLeave} // Delay dropdown hide when leaving options
-//               >
-//                 <ul className="py-2">
-//                   <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer">
-//                     Option 1
-//                   </li>
-//                   <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer">
-//                     Option 2
-//                   </li>
-//                   <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer">
-//                     Option 3
-//                   </li>
-                 
-//                 </ul>
-//               </div>
-//             )} */}
-
-//           </div>
-//           <div className="text-[14px] font-[600] cursor-pointer">Company</div>
-//         </div>
-//         <div className="flex justify-center items-center">
-//           <div className="text-[14px] font-[600] cursor-pointer">Resources</div>
-//           <div className="text-[14px] font-[600] cursor-pointer ml-[32px]">
-//             Login
-//           </div>
-//           <div className="text-[14px] font-[600] cursor-pointer items-center rounded-[5px] ml-[32px] px-[32px] py-[14px] bg-[#0bce5a] text-[#fff]">
-//             Open an account
-//           </div>
-//         </div>
-//       </nav>
-//     </div>
-//     <News/>
-//     </>
-//   );
-// };
-
-// export default Nav;

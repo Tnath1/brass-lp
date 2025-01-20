@@ -15,37 +15,37 @@ const AccordionItem = ({
   isOpen,
   onToggle,
 }: AccordionItemProps) => (
- <div className="border-b border-b-[#3a3636]">
-     <div
-    className={`border border-none  p-4 cursor-pointer ${
-      isOpen ? "bg-[#353535]" : ""
-    }`}
-    onClick={() => onToggle(index)}
-  >
-    <div className="flex justify-between items-center">
-      <h6 className="font-semibold text-lg">{title}</h6>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 16 16"
-        className={`w-4 h-4 transition-transform duration-300 ${
-          isOpen ? "transform rotate-180" : ""
-        }`}
-      >
-        <g fill="none" fillRule="evenodd">
-          <circle cx="8" cy="8" r="8" fill="#FFF" fillOpacity="0"></circle>
-          <path
-            stroke="#53616E"
-            strokeLinecap="round"
-            d="M4 6l3.646 3.646c.196.196.512.196.708 0L12 6"
-          ></path>
-        </g>
-      </svg>
+  <div className="border-b border-b-[#3a3636]">
+    <div
+      className={`border border-none  p-4 cursor-pointer ${
+        isOpen ? "bg-[#353535]" : ""
+      }`}
+      onClick={() => onToggle(index)}
+    >
+      <div className="flex justify-between items-center">
+        <h6 className="font-semibold text-lg">{title}</h6>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 16 16"
+          className={`w-4 h-4 transition-transform duration-300 ${
+            isOpen ? "transform rotate-180" : ""
+          }`}
+        >
+          <g fill="none" fillRule="evenodd">
+            <circle cx="8" cy="8" r="8" fill="#FFF" fillOpacity="0"></circle>
+            <path
+              stroke="#53616E"
+              strokeLinecap="round"
+              d="M4 6l3.646 3.646c.196.196.512.196.708 0L12 6"
+            ></path>
+          </g>
+        </svg>
+      </div>
+      {isOpen && (
+        <div className="mt-2 text-sm text-[#fff] leading-6">{content}</div>
+      )}
     </div>
-    {isOpen && (
-      <div className="mt-2 text-sm text-[#fff] leading-6">{content}</div>
-    )}
   </div>
- </div>
 );
 
 const Accordion = () => {
@@ -63,8 +63,7 @@ const Accordion = () => {
     },
     {
       title: "How much do I pay to sign up at Brass??",
-      content:
-        "You do not pay for signing up for an account at Brass",
+      content: "You do not pay for signing up for an account at Brass",
     },
     {
       title: "What do I need to open an account?",
