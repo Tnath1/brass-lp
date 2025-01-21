@@ -281,7 +281,7 @@ const Hero = () => {
             </div>
           </div>
         </div> */}
-        <div className="col-start-7 col-span-6 lg:max-h-full l:h-[400px] relative flex items-end">
+        <div className="col-start-7 col-span-6 lg:max-h-full l:h-[400px] lg:h-full relative flex items-end">
           <span className="img-container relative block w-full h-full">
             <picture>
               <source
