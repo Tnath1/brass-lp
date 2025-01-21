@@ -55,7 +55,7 @@ const Nav = () => {
   return (
     <div className="w-full fixed z-[9999]">
       <div className="bg-black z-50  text-white w-full h-[80px]    ">
-        <nav className="flex justify-between items-center  lg:pl-[120px] lg:px-0 px-[32px] mx-auto h-full ">
+        <nav className="flex justify-between items-center  lg:pl-[120px] lg:px-0 md:px-[32px] px-[14px] mx-auto h-full ">
           <div className="  flex justify-center items-center ">
             <Link to="/" className="mr-[48px] ">
               <div>
@@ -132,7 +132,7 @@ const Nav = () => {
           </div>
           <button
             type="button"
-            className="Hand_burger_menu group relative z-[102] flex flex-col justify-center items-center gap-1 lg:hidden p-2"
+            className=" relative z-[102] flex flex-col justify-center items-center gap-[6px] lg:hidden p-2"
             aria-haspopup="true"
             aria-expanded={isOpen}
             aria-controls="site-nav"
@@ -141,23 +141,23 @@ const Nav = () => {
           >
             {/* Top Line */}
             <div
-              className={`bg-white w-8 h-[3px] rounded transition-all duration-300 ease-[cubic-bezier(0.455,0.03,0.515,0.955)] ${
+              className={`bg-white w-[25px] h-[2px] rounded transition-all duration-300 ease-[cubic-bezier(0.455,0.03,0.515,0.955)] ${
                 isOpen
-                  ? "translate-y-[7px] rotate-45"
+                  ? "translate-y-[9px] rotate-45"
                   : "translate-y-0 rotate-0"
               }`}
             ></div>
 
             {/* Middle Line */}
             <div
-              className={`bg-white w-8 h-[3px] rounded transition-all duration-300 ease-[cubic-bezier(0.455,0.03,0.515,0.955)] ${
+              className={`bg-white w-[25px] h-[2px] rounded transition-all duration-300 ease-[cubic-bezier(0.455,0.03,0.515,0.955)] ${
                 isOpen ? "opacity-0" : "opacity-100"
               }`}
             ></div>
 
             {/* Bottom Line */}
             <div
-              className={`bg-white w-8 h-[3px] rounded transition-all duration-300 ease-[cubic-bezier(0.455,0.03,0.515,0.955)] ${
+              className={`bg-white w-[25px] h-[2px] rounded transition-all duration-300 ease-[cubic-bezier(0.455,0.03,0.515,0.955)] ${
                 isOpen
                   ? "-translate-y-[7px] -rotate-45"
                   : "translate-y-0 rotate-0"
