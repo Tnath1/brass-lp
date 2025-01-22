@@ -17,7 +17,7 @@ const AccordionItem = ({
 }: AccordionItemProps) => (
   <div className="border-b border-b-[#3a3636]">
     <div
-      className={`border border-none  p-4 cursor-pointer ${
+      className={`border border-none  p-8 cursor-pointer ${
         isOpen ? "bg-[#353535]" : ""
       }`}
       onClick={() => onToggle(index)}
@@ -79,16 +79,16 @@ const Accordion = () => {
 
   return (
     <section className="py-[200px] pt-[96px] pb-[72px] bg-[#060809] text-white mx-auto w-full">
-      <div className="px-[120px] grid gap-y-12 gap-x-7 grid-cols-12 mx-auto ">
-        <header className="col-start-1 col-span-5">
-          <h2 className="text-[45px] font-semibold tracking-[-1.21px] leading-[58px] mb-[1rem]">
+      <div className="lg:px-[120px] md:px-[32px] px-[16px] grid gap-y-12 gap-x-7 grid-cols-1 lg:grid-cols-12 mx-auto ">
+        <header className="lg:col-start-1 lg:col-span-5">
+          <h2 className="lg:text-[45px] text-[30px] lg:text-left text-center  font-semibold tracking-[-1.21px] leading-[58px] mb-[1rem]">
             Some of the things you may want to know
           </h2>
-          <p className="text-white text-[18px] font-normal tracking-[-0.2px] leading-[26px]">
+          <p className="text-white lg:text-[18px] text-[15px] lg:text-left text-center font-normal tracking-[-0.2px] leading-[26px]">
             We answered questions so you don’t have to ask them.
           </p>
         </header>
-        <div className="space-y-4 col-start-7 col-span-6">
+        <div className="space-y-4 lg:col-start-7 lg:col-span-6">
           {accordionItems.map((item, index) => (
             <AccordionItem
               key={index}

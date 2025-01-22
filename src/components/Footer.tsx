@@ -18,9 +18,9 @@ const Footer = () => {
                 <path
                   d="M13 6L8 11L3 6"
                   stroke="#50555E"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 ></path>
               </svg>
             </header>
@@ -54,9 +54,9 @@ const Footer = () => {
                 <path
                   d="M13 6L8 11L3 6"
                   stroke="#50555E"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 ></path>
               </svg>
             </header>
@@ -96,9 +96,9 @@ const Footer = () => {
                 <path
                   d="M13 6L8 11L3 6"
                   stroke="#50555E"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 ></path>
               </svg>
             </header>
@@ -150,9 +150,9 @@ const Footer = () => {
                 <path
                   d="M13 6L8 11L3 6"
                   stroke="#50555E"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 ></path>
               </svg>
             </header>
@@ -198,9 +198,9 @@ const Footer = () => {
                 <path
                   d="M13 6L8 11L3 6"
                   stroke="#50555E"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 ></path>
               </svg>
             </header>
@@ -246,9 +246,9 @@ const Footer = () => {
                 <path
                   d="M13 6L8 11L3 6"
                   stroke="#50555E"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 ></path>
               </svg>
             </header>
@@ -294,9 +294,9 @@ const Footer = () => {
                 <path
                   d="M13 6L8 11L3 6"
                   stroke="#50555E"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 ></path>
               </svg>
             </header>
@@ -329,7 +329,7 @@ const Footer = () => {
           </div>
         </section>
 
-        <section className=" lg:mt-[172px] text-[#fff]">
+        <section className=" lg:mt-[172px] mt-[100px] text-[#fff]">
           <div className="flex items-baseline">
             <svg
               className="Footer-module--Footer_subSection_logoSection_logo--D1Yhj"
@@ -397,7 +397,7 @@ const Footer = () => {
             </a>
           </div>
         </section>
-        <section className="lg:mt-[64px] text-white text-[15px] font-normal tracking-[-0.12px] leading-[20px]">
+        <section className="lg:mt-[64px] lg:pb-0 pb-[7rem] mt-[30px] text-white text-[15px] font-normal tracking-[-0.12px] leading-[20px]">
           Banking services backed by Wema Bank &amp; Titan Trust Bank and
           regulated by the Central Bank of Nigeria.
           <br />
