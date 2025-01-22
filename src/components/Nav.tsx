@@ -167,7 +167,7 @@ const Nav = () => {
         </nav>
       </div>
 
-      <div className="mobile relative h-screen">
+      <div className="mobile relative ">
         <News />
 
         {isOpen && (

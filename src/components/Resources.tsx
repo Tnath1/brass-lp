@@ -5,18 +5,18 @@ import Business from "/img/business (1).png";
 const Resources = () => {
   return (
     <section className="py-[100px] mx-auto w-full">
-      <div className="lg:px-[120px] px-[32px]  ">
+      <div className="lg:px-[120px] md:px-[32px] px-[16px]  ">
         <header className="ml-auto mr-auto max-w-[585px] text-center  ">
-          <h2 className="text-[45px] font-semibold tracking-[-1.21px] leading-[58px] mb-4 text-center">
+          <h2 className="lg:text-[45px] text-[30px]  font-semibold tracking-[-1.21px] lg:leading-[58px] leading-[38px] mb-4 text-center">
             Go further with resources to get started
           </h2>
-          <p className=" text-center text-[#060809] text-[18px] font-[500] tracking-[-0.2px] leading-[26px]">
+          <p className=" text-center text-[#060809] lg:text-[18px] text-[15px] font-[500] tracking-[-0.2px] leading-[26px]">
             We have partnered with businesses on the same mission as ours to
             help local businesses. We have also added resources you need to
             start, run and grow your business.
           </p>
         </header>
-        <div className="  grid lg:grid-cols-3 mt-[48px] gap-x-8 gap-y-[30px] ">
+        <div className="  grid  grid-cols-1 md:grid-cols-2  lg:grid-cols-3  mt-[48px] gap-x-8 gap-y-[30px] ">
           <a
             href="https://medium.com/brass-resources/why-you-need-a-separate-business-current-account-f5e81c29cfd9"
             target="_blank"

@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect } from "react";
 
 interface Testimonial {
@@ -46,7 +44,7 @@ const Businesses: React.FC = () => {
   const { description, name, logo, image } = testimonials[currentTestimonial];
 
   return (
-    <section className=" md:pt-[200px] ">
+    <section className=" md:pt-[200px] pt-[88px] ">
       <div className="px-10 mx-auto">
         <header className="text-center mb-8">
           <h2 className="text-[30px] font-[600] text-center m-auto max-w-[475px]  leading-tight mb-4">
@@ -59,11 +57,9 @@ const Businesses: React.FC = () => {
         </header>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 items-center border border-black">
+      <div className="md:grid hidden md:grid-cols-2 items-center border border-black">
         {/* Testimonial Content */}
-        <div
-          className="bg-black text-white flex flex-col justify-center items-center w-full h-full p-10 md:p-16"
-        >
+        <div className="bg-black text-white flex flex-col justify-center items-center w-full h-full p-10 md:p-16">
           <h3 className="text-xl font-medium leading-relaxed mb-4">
             {description}
           </h3>
@@ -81,16 +77,51 @@ const Businesses: React.FC = () => {
               ></span>
             ))}
           </div>
-         <div className="mt-[3rem] h-[3rem] w-full  "> <img src={logo} alt="Logo" className="h-10 mx-auto" /></div>
+          <div className="mt-[3rem] h-[3rem] w-full  ">
+            {" "}
+            <img src={logo} alt="Logo" className="h-10 mx-auto" />
+          </div>
         </div>
 
         {/* Testimonial Image */}
         <div className="w-full h-full">
-          <img
-            src={image}
-            alt={name}
-            className="w-full h-full object-cover"
-          />
+          <img src={image} alt={name} className="w-full h-full object-cover" />
+        </div>
+      </div>
+
+
+
+
+{/* for md and sm screens */}
+      <div className="grid md:hidden grid-cols-1 items-center border border-black">
+        {/* Testimonial Image */}
+        <div className="w-full h-full">
+          <img src={image} alt={name} className="w-full h-full object-cover" />
+        </div>
+
+        {/* Testimonial Content */}
+        <div className="bg-black text-white flex flex-col justify-center items-center w-full h-full py-10 px-[16px] md:p-16">
+          <h3 className="text-l text-center font-medium leading-relaxed ">
+            {description}
+          </h3>
+          <p className="text-gray-400 mt-[3rem]  font-semibold mb-6">{name}</p>
+          <div className="flex mt-[1rem] items-center justify-center space-x-3 mb-6">
+            {testimonials.map((_, index) => (
+              <span
+                key={index}
+                className={`h-3 w-3 rounded-full cursor-pointer transition-all ${
+                  index === currentTestimonial
+                    ? "bg-white scale-125"
+                    : "bg-gray-500"
+                }`}
+                onClick={() => setCurrentTestimonial(index)}
+              ></span>
+            ))}
+          </div>
+          <div className="mt-[3rem] h-[3rem] w-full  ">
+            {" "}
+            <img src={logo} alt="Logo" className="h-10 mx-auto" />
+          </div>
         </div>
       </div>
     </section>
