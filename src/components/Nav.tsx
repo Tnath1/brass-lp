@@ -13,12 +13,11 @@ const Nav = () => {
   const faqItems = [
     {
       title: "Industry",
-      content:
-        "We cu and ",
+      content: "We cu and ",
     },
     {
       title: "Customers",
-      content: "You do not pay for signing up for an account at Brass.",
+      content: "",
     },
     {
       title: "Products",
@@ -42,8 +41,7 @@ const Nav = () => {
     },
     {
       title: "Login",
-      content:
-        "tgtetaer",
+      content: "tgtetaer",
     },
     {
       title: "Open an account",
@@ -167,14 +165,23 @@ const Nav = () => {
         </nav>
       </div>
 
-      <div className="mobile relative ">
+      <div className="relative">
+        {/* News component */}
         <News />
 
-        {isOpen && (
-          <div className="absolute  top-0 w-full h-screen">
-            <Accordion items={faqItems} allowMultiple={false} />
-          </div>
-        )}
+        {/* Mobile accordion */}
+        <div
+          className={`mobile absolute left-0 right-0 top-0 scroll-auto h-screen ${
+            isOpen ? "block" : "hidden"
+          }`}
+        >
+          {/* Render Accordion only when isOpen is true */}
+          {isOpen && (
+            <div className=" w-full h-full">
+              <Accordion items={faqItems} allowMultiple={false} />
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

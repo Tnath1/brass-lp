@@ -2,7 +2,7 @@
 const CallToAction = () => {
   return (
 <section className="bg-[#060809] text-white  w-full mx-auto md:py-[6.25rem] py-0">
-  <div className="lg:px-[120px] md:px-[32px]  m-auto ">
+  <div className="lg:px-[120px] md:px-[32px] px-[14px]  m-auto ">
     <header className="text-center">
       <h2 className="text-[30px] font-semibold leading-[41px] mb-4 tracking-[-0.24px]">
         Get started for free in 10 minutes

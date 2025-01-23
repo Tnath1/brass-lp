@@ -1,9 +1,66 @@
 const Footer = () => {
+
+  const sections = [
+    {
+      title: "Industry",
+      links: [
+        { label: "Retail businesses", href: "/retail" },
+        { label: "Internet companies", href: "/internet-companies" },
+      ],
+    },
+    {
+      title: "Products",
+      links: [
+        { label: "Brass Capital", href: "/retail" },
+        { label: "Payroll", href: "/internet-companies" },
+        { label: "Launchpad", href: "/internet-companies" },
+      ],
+    },
+    {
+      title: "About",
+      links: [
+        { label: "Customers", href: "/retail" },
+        { label: "Company", href: "/internet-companies" },
+        { label: "Why Brass", href: "/internet-companies" },
+        { label: "Press resources", href: "/internet-companies" },
+        { label: "Careers", href: "/internet-companies" },
+      ],
+    },
+    {
+      title: "Support",
+      links: [
+        { label: "Blog", href: "/retail" },
+        { label: "Guides", href: "/internet-companies" },
+        { label: "Help", href: "/internet-companies" },
+        { label: "BBC", href: "/internet-companies" },
+      ],
+    },
+    {
+      title: "Legal",
+      links: [
+        { label: "Terms of service", href: "/retail" },
+        { label: "Privacy policy", href: "/internet-companies" },
+        { label: "Capital TOS", href: "/internet-companies" },
+        { label: "Cards T&Cs", href: "/internet-companies" },
+      ],
+    },
+    {
+      title: "Follow",
+      links: [
+        { label: "Twitter", href: "/retail" },
+        { label: "LinkedIn", href: "/internet-companies" },
+      ],
+    },
+  ];
+  
+
+
+
   return (
     <section className=" lg:flex block md:pt-14 md:pb-[120px] bg-[#060809] text-[#fff] ">
       <div className="lg:px-[120px] px-[32px] m-auto w-full ">
-        <section className="lg:flex w-full  ">
-          <div className="w-full  ">
+        {/* <section className="lg:flex w-full border ">
+          <div className="w-full pt-[1rem] ">
             <header className="md:cursor-auto mb-[20px] flex items-center justify-between ">
               <h6 className="text-[#50555e] text-[15px] font-normal tracking-[-0.12px] leading-5">
                 Industry
@@ -327,9 +384,53 @@ const Footer = () => {
               </a>
             </div>
           </div>
-        </section>
+        </section> */}
 
-        <section className=" lg:mt-[172px] mt-[100px] text-[#fff]">
+
+
+
+
+
+<section className="lg:flex w-full sm:pt-[40px]">
+  {sections.map((section, index) => (
+    <div key={index} className="w-full lg:pl-[1rem] pt-[20px] lg:pt-0">
+      <header className="md:cursor-auto mb-[20px] flex items-center justify-between">
+        <h6 className="text-[#50555e] text-[15px] font-normal tracking-[-0.12px] leading-5">
+          {section.title}
+        </h6>
+        {/* <svg
+          className="block md:hidden"
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="none"
+        >
+          <path
+            d="M13 6L8 11L3 6"
+            stroke="#50555E"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          ></path>
+        </svg> */}
+      </header>
+      <div className="mt-[20px] text-[#fff] flex sm:flex max-h-max relative z-0 flex-col   transition-max-height duration-300 ease-in">
+        {section.links.map((link, idx) => (
+          <a
+            key={idx}
+            className="text-[15px] font-normal leading-[20px] tracking-[-0.12px] text-decoration-none whitespace-nowrap w-fit mt-[20px]"
+            href={link.href}
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
+    </div>
+  ))}
+</section>
+
+
+        <section className=" lg:mt-[150px] mt-[88px] text-[#fff]">
           <div className="flex items-baseline">
             <svg
               className="Footer-module--Footer_subSection_logoSection_logo--D1Yhj"
@@ -390,14 +491,14 @@ const Footer = () => {
             </div>
 
             <a
-              className="fixed bottom-0 left-0 right-0 z-[100] bg-[#0bce5a] text-white flex items-center justify-center text-[15px] font-semibold leading-[20px] tracking-[-0.12px] h-[80px] mt-[72px] w-full md:hidden"
+              className="fixed bottom-0 left-0 right-0 z-[100] bg-[#0bce5a] text-white flex items-center justify-center text-[15px] font-semibold leading-[20px] tracking-[-0.12px] h-[80px]  w-full md:hidden"
               href="#"
             >
               <span>Open an account in 10 minutes</span>
             </a>
           </div>
         </section>
-        <section className="lg:mt-[64px] lg:pb-0 pb-[7rem] mt-[30px] text-white text-[15px] font-normal tracking-[-0.12px] leading-[20px]">
+        <section className="lg:mt-[64px] md:pb-0 pb-[7rem] mt-[30px] text-white text-[15px] font-normal tracking-[-0.12px] leading-[20px]">
           Banking services backed by Wema Bank &amp; Titan Trust Bank and
           regulated by the Central Bank of Nigeria.
           <br />
