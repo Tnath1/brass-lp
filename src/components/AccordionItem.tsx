@@ -23,18 +23,18 @@ const AccordionItem = ({
       onClick={() => onToggle(index)}
     >
       <div className="flex justify-between items-center">
-        <h6 className="font-semibold text-lg">{title}</h6>
+        <h6 className="font-semibold md:text-lg text-[14px]">{title}</h6>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 16 16"
-          className={`w-4 h-4 transition-transform duration-300 ${
+          className={`md:w-4 md:h-4 h-6 w-6 transition-transform duration-300 ${
             isOpen ? "transform rotate-180" : ""
           }`}
         >
           <g fill="none" fillRule="evenodd">
             <circle cx="8" cy="8" r="8" fill="#FFF" fillOpacity="0"></circle>
             <path
-              stroke="#53616E"
+              stroke="#fff"
               strokeLinecap="round"
               d="M4 6l3.646 3.646c.196.196.512.196.708 0L12 6"
             ></path>
@@ -79,9 +79,9 @@ const Accordion = () => {
 
   return (
     <section className="py-[200px] pt-[96px] pb-[72px] bg-[#060809] text-white mx-auto w-full">
-      <div className="lg:px-[120px] md:px-[32px] px-[16px] grid gap-y-12 gap-x-7 grid-cols-1 lg:grid-cols-12 mx-auto ">
+      <div className="lg:px-[120px] md:px-[32px] px-[12px] grid gap-y-12 gap-x-7 grid-cols-1 lg:grid-cols-12 mx-auto ">
         <header className="lg:col-start-1 lg:col-span-5">
-          <h2 className="lg:text-[45px] text-[30px] lg:text-left text-center  font-semibold tracking-[-1.21px] leading-[58px] mb-[1rem]">
+          <h2 className="lg:text-[45px] text-[25px] lg:text-left text-center  font-semibold tracking-[-1.21px] lg:leading-[58px] leading-[35px] mb-[1rem]">
             Some of the things you may want to know
           </h2>
           <p className="text-white lg:text-[18px] text-[15px] lg:text-left text-center font-normal tracking-[-0.2px] leading-[26px]">
