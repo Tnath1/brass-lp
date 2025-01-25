@@ -1,9 +1,34 @@
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-const Login = () => {
+import ScrollToTop from "../components/reusable/ScrollToTop";
+const Login: React.FC = () => {
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Form data submitted:", formData);
+  };
+
   return (
-    <div>
+    <div className="signup-container">
+      <ScrollToTop />
+
+      {/* Navbar Section */}
       <section>
-        <div className=" h-[80px] border border-[black] flex lg:px-[120px] md:px-[32px] px-[16px] justify-between items-center ">
+        <div className="h-[80px]  flex lg:px-[120px] md:px-[32px] px-[16px] justify-between items-center">
           <Link to="/">
             <svg
               width="83"
@@ -39,13 +64,133 @@ const Login = () => {
               ></path>
             </svg>
           </Link>
-          <Link to="/SignUp" className="text-[15px] font-[600]">
-            Open account
+          <Link to="/SignUp" className="text-[15px] font-[600] ">
+            Sign up
           </Link>
         </div>
-
-        <div></div>
       </section>
+
+      {/* Login Form */}
+      <div className="pt-[100px] max-w-[345px] mt-0 mx-auto mb-8">
+        <form className="signup-form p-[16px]  " onSubmit={handleSubmit}>
+          <header className="mb-[32px]">
+            <h1 className="text-[28px] font-[600] ">Log into your account</h1>
+          </header>
+
+          <fieldset>
+            {/* Email */}
+            <div className="input-group  font-[600] flex flex-col text-[13px] ">
+              <label htmlFor="email">Email</label>
+              <input
+                className=" px-[10px] py-[12px] "
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Your email address"
+                autoComplete="email"
+                value={formData.email}
+                onChange={handleChange}
+              />
+            </div>
+            {/* Password */}
+            <div className="  flex flex-col  text-[13px]">
+              <label className=" gap-1 flex font-[600] mt-[24px] justify-center items-center  ">
+                Password
+                <div data-testid="trigger" className="">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="13"
+                    height="13"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.7px"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                  </svg>
+                  <div
+                    className="_brassui-tooltip_popover_v40hr_7 _brassui-tooltip_popover__right_v40hr_117"
+                    style={{ width: "270px" }}
+                  >
+                    <span className="_InfoToolTip_info_1tia0_1 hidden">
+                      Your password must be at least 8 characters
+                    </span>
+                  </div>
+                </div>
+              </label>
+              <div className="_brassui-text-input_container_18bzg_13">
+                <div className="relative">
+                  <input
+                    type="password"
+                    placeholder="Password (min. of 8 characters)"
+                    name="user.password"
+                    autoComplete="new-password"
+                    aria-label="text-input"
+                    data-testid="input"
+                    className=" w-full px-[10px]  py-[12px]"
+                    value=""
+                  />
+                  <span
+                    className="_PasswordInput text-[#0ea84c] absolute top-3 left-[16rem]"
+                    role="button"
+                    tabIndex={0}
+                  >
+                    Show
+                  </span>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <div className="mt-[24px] ">
+            <div className=" flex text-[12px] align-top">
+              <span className="flex justify-center items-center">
+                <p className="text-[12px]">
+                  forgot your password?
+                  <a
+                    className="text-[#0ea84c] underline pl-[2px]"
+                    target="__blank"
+                    href="https://www.trybrass.com/legal/privacy-policy/"
+                  >
+                    reset it here
+                  </a>
+                </p>
+              </span>
+            </div>
+          </div>
+
+          {/* Submit Button */}
+          <div>
+            <button
+              disabled={true}
+              type="submit"
+              className="submit-button cursor-pointer rounded-[5px] mt-[32px] font-[600] mb-[16px] py-[14px] px-[32px] border-green-500 border  w-full text-center"
+            >
+              Log in
+            </button>
+          </div>
+
+          <div className=" flex flex-col items-center">
+            <div className="text-[12px] px-[14px] py-[24px] bg-[#f9fafa] w-full">
+              <span className="text-[12px] font-[600] text-center">
+                Having problems Loggin in?
+              </span>
+              <div className="flex mt-[5px]">
+                <button
+                  type="button"
+                  className="_Button_w7pun_1 _Button_text_w7pun_104 _AuthFaq_content_btn_1ul06_32"
+                >
+                  <span className="text-[#0ea84c]">Chat with us</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };
