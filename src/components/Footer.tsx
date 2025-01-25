@@ -1,5 +1,6 @@
-const Footer = () => {
+import { Link } from "react-router-dom";
 
+const Footer = () => {
   const sections = [
     {
       title: "Industry",
@@ -52,9 +53,6 @@ const Footer = () => {
       ],
     },
   ];
-  
-
-
 
   return (
     <section className=" lg:flex block md:pt-14 md:pb-[120px] bg-[#060809] text-[#fff] ">
@@ -386,19 +384,14 @@ const Footer = () => {
           </div>
         </section> */}
 
-
-
-
-
-
-<section className="lg:flex w-full sm:pt-[40px]">
-  {sections.map((section, index) => (
-    <div key={index} className="w-full lg:pl-[1rem] pt-[20px] lg:pt-0">
-      <header className="md:cursor-auto mb-[20px] flex items-center justify-between">
-        <h6 className="text-[#50555e] text-[15px] font-normal tracking-[-0.12px] leading-5">
-          {section.title}
-        </h6>
-        {/* <svg
+        <section className="lg:flex w-full sm:pt-[40px]">
+          {sections.map((section, index) => (
+            <div key={index} className="w-full lg:pl-[1rem] pt-[20px] lg:pt-0">
+              <header className="md:cursor-auto mb-[20px] flex items-center justify-between">
+                <h6 className="text-[#50555e] text-[15px] font-normal tracking-[-0.12px] leading-5">
+                  {section.title}
+                </h6>
+                {/* <svg
           className="block md:hidden"
           width="16"
           height="16"
@@ -413,22 +406,21 @@ const Footer = () => {
             strokeLinejoin="round"
           ></path>
         </svg> */}
-      </header>
-      <div className="mt-[20px] text-[#fff] flex sm:flex max-h-max relative z-0 flex-col   transition-max-height duration-300 ease-in">
-        {section.links.map((link, idx) => (
-          <a
-            key={idx}
-            className="text-[15px] font-normal leading-[20px] tracking-[-0.12px] text-decoration-none whitespace-nowrap w-fit mt-[20px]"
-            href={link.href}
-          >
-            {link.label}
-          </a>
-        ))}
-      </div>
-    </div>
-  ))}
-</section>
-
+              </header>
+              <div className="mt-[20px] text-[#fff] flex sm:flex max-h-max relative z-0 flex-col   transition-max-height duration-300 ease-in">
+                {section.links.map((link, idx) => (
+                  <a
+                    key={idx}
+                    className="text-[15px] font-normal leading-[20px] tracking-[-0.12px] text-decoration-none whitespace-nowrap w-fit mt-[20px]"
+                    href={link.href}
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+          ))}
+        </section>
 
         <section className=" lg:mt-[150px] mt-[88px] text-[#fff]">
           <div className="flex items-baseline">
@@ -490,12 +482,12 @@ const Footer = () => {
               </a>
             </div>
 
-            <a
-              className="fixed bottom-0 left-0 right-0 z-[100] bg-[#0bce5a] text-white flex items-center justify-center text-[15px] font-semibold leading-[20px] tracking-[-0.12px] h-[80px]  w-full md:hidden"
-              href="#"
+            <Link
+              to="/signUp"
+              className="fixed bottom-0 left-0 right-0 z-[999] bg-[#0bce5a] text-white flex items-center justify-center text-[15px] font-semibold leading-[20px] tracking-[-0.12px] h-[80px]  w-full md:hidden"
             >
-              <span>Open an account in 10 minutes</span>
-            </a>
+              Open an account in 10 minutes
+            </Link>
           </div>
         </section>
         <section className="lg:mt-[64px] md:pb-0 pb-[7rem] mt-[30px] text-white text-[15px] font-normal tracking-[-0.12px] leading-[20px]">

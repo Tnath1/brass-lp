@@ -1,54 +1,66 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, } from "react";
 import News from "./News";
-import Accordion from "./reusable/Accordions";
+// import Accordion from "./reusable/Accordions";
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const [openAccordions, setOpenAccordions] = useState<{
+    [key: number]: boolean;
+  }>({});
 
   const toggleMobileDiv = () => {
     setIsOpen((prevState) => !prevState);
   };
 
-  const faqItems = [
-    {
-      title: "Industry",
-      content: "We cu and ",
-    },
-    {
-      title: "Customers",
-      content: "",
-    },
-    {
-      title: "Products",
-      content:
-        "You will need government-issued IDs (Including BVN) and your company's incorporation documents.",
-    },
-    {
-      title: "Companies",
-      content:
-        "We have introduced Two Factor Authentication (2FA) for an extra level of security.",
-    },
-    {
-      title: "Resources",
-      content:
-        "We have introduced Two Factor Authentication (2FA) for an extra level of security.",
-    },
-    {
-      title: "Country",
-      content:
-        "We have introduced Two Factor Authentication (2FA) for an extra level of security.",
-    },
-    {
-      title: "Login",
-      content: "tgtetaer",
-    },
-    {
-      title: "Open an account",
-      content:
-        "We have introduced Two Factor Authentication (2FA) for an extra level of security.",
-    },
-  ];
+  // Toggles the accordion visibility
+  const toggleAccordion = (index: number) => {
+    setOpenAccordions((prev) => ({
+      ...prev,
+      [index]: !prev[index],
+    }));
+  };
+
+  // const faqItems = [
+  //   {
+  //     title: "Industry",
+  //     content: "We cu and ",
+  //   },
+  //   {
+  //     title: "Customers",
+  //     content: "",
+  //   },
+  //   {
+  //     title: "Products",
+  //     content:
+  //       "You will need government-issued IDs (Including BVN) and your company's incorporation documents.",
+  //   },
+  //   {
+  //     title: "Companies",
+  //     content:
+  //       "We have introduced Two Factor Authentication (2FA) for an extra level of security.",
+  //   },
+  //   {
+  //     title: "Resources",
+  //     content:
+  //       "We have introduced Two Factor Authentication (2FA) for an extra level of security.",
+  //   },
+  //   {
+  //     title: "Country",
+  //     content:
+  //       "We have introduced Two Factor Authentication (2FA) for an extra level of security.",
+  //   },
+  //   {
+  //     title: "Login",
+  //     content: "tgtetaer",
+  //   },
+  //   {
+  //     title: "Open an account",
+  //     content:
+  //       "We have introduced Two Factor Authentication (2FA) for an extra level of security.",
+  //   },
+  // ];
 
   return (
     <div className="w-full fixed z-[9999]">
@@ -165,21 +177,322 @@ const Nav = () => {
         </nav>
       </div>
 
-      <div className="relative">
+      <div className="relative h-screen overflow-visible">
         {/* News component */}
         <News />
 
         {/* Mobile accordion */}
+
         <div
-          className={`mobile absolute left-0 right-0 top-0 scroll-auto h-screen ${
-            isOpen ? "block" : "hidden"
+          className={`mobile absolute left-0 right-0 top-0 scroll-auto h-screen transform transition-transform duration-500 ease-in-out ${
+            isOpen ? " translate-x-0" : " translate-x-full "
           }`}
         >
-          {/* Render Accordion only when isOpen is true */}
           {isOpen && (
-            <div className=" w-full h-full">
-              <Accordion items={faqItems} allowMultiple={false} />
-            </div>
+            // <div className=" w-full h-full">
+
+            //   <Accordion items={faqItems} allowMultiple={false} />
+            // </div>
+
+            <nav className="w-full  h-screen">
+              <ul className=" text-[15px]">
+                {/* First Link - Accordion */}
+                <li className="border-b  border-b-[#252525]">
+                  <div className="flex py-[16px]  justify-center items-center px-[16px] bg-black">
+                    <button
+                      onClick={() => toggleAccordion(1)}
+                      className="w-full text-left bg-black text-white   "
+                    >
+                      Industry
+                    </button>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 16 16"
+                      className="w-4 h-4 block md:hidden bg-black transition-transform duration-300 rotate-360 "
+                    >
+                      <g fill="none" fillRule="evenodd">
+                        <circle
+                          cx="8"
+                          cy="8"
+                          r="8"
+                          fill="#FFF"
+                          fillOpacity="0"
+                        ></circle>
+                        <path
+                          stroke="#fff"
+                          strokeLinecap="round"
+                          d="M4 6l3.646 3.646c.196.196.512.196.708 0L12 6"
+                        ></path>
+                      </g>
+                    </svg>
+                  </div>
+
+                  <ul
+                    className={`${openAccordions[1] ? "block" : "hidden"}   `}
+                  >
+                    <li className="bg-black py-">
+                      <a
+                        href="#nested1"
+                        className="text-white px-[16px] bg-black hover:underline"
+                      >
+                        Retail Businesses
+                      </a>
+                    </li>
+                    <li className="bg-black py-[16px]">
+                      <a
+                        href="#nested2"
+                        className="bg-black px-[16px]  text-white hover:text-green-600"
+                      >
+                        Internet companies
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+
+                {/* Second Link - Regular */}
+                <li className="border-b  border-b-[#252525]">
+                  <a
+                    href="#second"
+                    className="block w-full bg-black text-white p-[16px]  hover:text-green-600"
+                  >
+                    Customers
+                  </a>
+                </li>
+
+                {/* Third Link - accordion */}
+                <li className="border-b  border-b-[#252525]">
+                  <div className="flex py-[16px]  justify-center items-center px-[16px] bg-black">
+                    <button
+                      onClick={() => toggleAccordion(2)}
+                      className="w-full text-left bg-black text-white   "
+                    >
+                      Products
+                    </button>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 16 16"
+                      className="w-4 h-4 block md:hidden bg-black transition-transform duration-300 rotate-360 "
+                    >
+                      <g fill="none" fillRule="evenodd">
+                        <circle
+                          cx="8"
+                          cy="8"
+                          r="8"
+                          fill="#FFF"
+                          fillOpacity="0"
+                        ></circle>
+                        <path
+                          stroke="#fff"
+                          strokeLinecap="round"
+                          d="M4 6l3.646 3.646c.196.196.512.196.708 0L12 6"
+                        ></path>
+                      </g>
+                    </svg>
+                  </div>
+
+                  <ul
+                    className={`${openAccordions[2] ? "block" : "hidden"}   `}
+                  >
+                    <li className="bg-black py-">
+                      <a
+                        href="#nested1"
+                        className="text-white px-[16px] bg-black hover:underline"
+                      >
+                        Payrole
+                      </a>
+                    </li>
+                    <li className="bg-black py-[16px]">
+                      <a
+                        href="#nested2"
+                        className="bg-black px-[16px]  text-white hover:text-green-600"
+                      >
+                        Launchpads
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+
+                {/* Fourth Link - Regular */}
+
+                <li className="border-b  border-b-[#252525]">
+                  <div className="flex py-[16px]  justify-center items-center px-[16px] bg-black">
+                    <button
+                      onClick={() => toggleAccordion(3)}
+                      className="w-full text-left bg-black text-white   "
+                    >
+                      Company
+                    </button>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 16 16"
+                      className="w-4 h-4 block md:hidden bg-black transition-transform duration-300 rotate-360 "
+                    >
+                      <g fill="none" fillRule="evenodd">
+                        <circle
+                          cx="8"
+                          cy="8"
+                          r="8"
+                          fill="#FFF"
+                          fillOpacity="0"
+                        ></circle>
+                        <path
+                          stroke="#fff"
+                          strokeLinecap="round"
+                          d="M4 6l3.646 3.646c.196.196.512.196.708 0L12 6"
+                        ></path>
+                      </g>
+                    </svg>
+                  </div>
+
+                  <ul
+                    className={`${openAccordions[3] ? "block" : "hidden"}   `}
+                  >
+                    <li className="bg-black py-">
+                      <a
+                        href="#nested1"
+                        className="text-white px-[16px] bg-black hover:underline"
+                      >
+                        About us
+                      </a>
+                    </li>
+                    <li className="bg-black py-[16px]">
+                      <a
+                        href="#nested2"
+                        className="bg-black px-[16px]  text-white hover:text-green-600"
+                      >
+                        Why Brass
+                      </a>
+                    </li>
+                    <li className="bg-black py-[16px]">
+                      <a
+                        href="#nested2"
+                        className="bg-black px-[16px]  text-white hover:text-green-600"
+                      >
+                        Careers
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+
+                {/* Fifth Link - accordion */}
+                <li className="border-b border-b-[#252525]">
+                  <div className="flex py-[16px]  justify-center items-center px-[16px] bg-black">
+                    <button
+                      onClick={() => toggleAccordion(4)}
+                      className="w-full text-left bg-black text-white   "
+                    >
+                      Resources
+                    </button>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 16 16"
+                      className="w-4 h-4 block md:hidden bg-black transition-transform duration-300 rotate-360 "
+                    >
+                      <g fill="none" fillRule="evenodd">
+                        <circle
+                          cx="8"
+                          cy="8"
+                          r="8"
+                          fill="#FFF"
+                          fillOpacity="0"
+                        ></circle>
+                        <path
+                          stroke="#fff"
+                          strokeLinecap="round"
+                          d="M4 6l3.646 3.646c.196.196.512.196.708 0L12 6"
+                        ></path>
+                      </g>
+                    </svg>
+                  </div>
+
+                  <ul
+                    className={`${openAccordions[4] ? "block" : "hidden"}   `}
+                  >
+                    <li className="bg-black py-">
+                      <a
+                        href="#nested1"
+                        className="text-white px-[16px] bg-black hover:underline"
+                      >
+                        Blog
+                      </a>
+                    </li>
+                    <li className="bg-black py-[16px]">
+                      <a
+                        href="#nested2"
+                        className="bg-black px-[16px]  text-white hover:text-green-600"
+                      >
+                        Business Guide Book
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+
+                {/* sixth Link - accordion */}
+                <li className="border-b  border-b-[#252525]">
+                  <div className="flex py-[16px]  justify-center items-center px-[16px] bg-black">
+                    <button
+                      onClick={() => toggleAccordion(5)}
+                      className="w-full text-left bg-black text-white   "
+                    >
+                      Country
+                    </button>
+                    <div className="CountrySwitcher-module  ">
+                      <svg
+                        width="32.6"
+                        height="22.5"
+                        viewBox="0 0 21 15"
+                        fill="none"
+                      >
+                        <path
+                          d="M20.5 0H0.5C0.223858 0 0 0.223858 0 0.5V14C0 14.2761 0.223858 14.5 0.500001 14.5H20.5C20.7761 14.5 21 14.2761 21 14V0.5C21 0.223858 20.7761 0 20.5 0Z"
+                          fill="#008751"
+                        ></path>
+                        <path d="M14 0H7V14.5H14V0Z" fill="white"></path>
+                      </svg>
+                    </div>
+                  </div>
+
+                  <ul
+                    className={`${openAccordions[5] ? "block" : "hidden"}   `}
+                  >
+                    <li className="bg-black py-">
+                      <a
+                        href="#nested1"
+                        className="text-white px-[16px] bg-black hover:underline"
+                      >
+                        Nigeria
+                      </a>
+                    </li>
+                    <li className="bg-black py-[16px]">
+                      <a
+                        href="#nested2"
+                        className="bg-black px-[16px]  text-white hover:text-green-600"
+                      >
+                        South Africa
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+
+                {/* seventh Link - Regular */}
+                <li className="border-b  border-b-[#252525]">
+                  <a
+                    href="#second"
+                    className="block w-full bg-black text-white p-[16px] hover:text-green-600"
+                  >
+                    Login
+                  </a>
+                </li>
+                <li className="border-b  border-b-[#252525]">
+                  <a
+                    href="#second"
+                    className="block w-full bg-black text-white p-[16px] hover:text-green-600"
+                  >
+                    Open an account
+                  </a>
+                </li>
+              </ul>
+            </nav>
           )}
         </div>
       </div>
