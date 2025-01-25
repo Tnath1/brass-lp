@@ -336,9 +336,9 @@ const Signup: React.FC = () => {
             <button
               disabled={true}
               type="submit"
-              className="submit-button cursor-pointer rounded-[5px] mt-[32px] mb-[16px] py-[14px] px-[32px] border-green-500 border  w-full text-center"
+              className="submit-button cursor-pointer rounded-[5px] font-[600] mt-[32px] mb-[16px] py-[14px] px-[32px] border-green-500 border  w-full text-center"
             >
-              Submit
+              Sign up
             </button>
           </div>
 
