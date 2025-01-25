@@ -134,7 +134,7 @@ const Features = () => {
     <section className="lg:mt-[154px] md:mt-[88px]">
       <div className="lg:px-[120px] md:px-[32px] px-[16px]">
         <header className="mb-8 lg:max-w-[585px] w-full">
-          <h2 className="lg:text-[45px] text-[30px] font-semibold tracking-[-1.21px] leading-[58px] lg:text-left text-center">
+          <h2 className="lg:text-[45px] text-[30px] font-semibold tracking-[-1.21px] leading-[40px] lg:text-left text-center">
             Everything you need, less of what you don't.
           </h2>
         </header>
