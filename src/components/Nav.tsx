@@ -22,10 +22,7 @@ const Nav = () => {
   };
 
 
-  // useEffect(() => {
-  //   document.body.style.overflow = isOpen ? "hidden" : "auto";
-  // }, [isOpen]);
-  
+ 
 
   return (
     <div className="w-full fixed z-[9999]">
