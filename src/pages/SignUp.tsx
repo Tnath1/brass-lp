@@ -58,7 +58,7 @@
 
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
+import ScrollToTop from "../components/reusable/ScrollToTop";
 const Signup: React.FC = () => {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -87,6 +87,8 @@ const Signup: React.FC = () => {
 
   return (
     <div className="signup-container">
+    <ScrollToTop/>
+
       {/* Navbar Section */}
       <section>
         <div className="h-[80px]  flex lg:px-[120px] md:px-[32px] px-[16px] justify-between items-center">

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Heroimg from "/img/hero.webp";
 
 const Hero = () => {
@@ -13,16 +14,17 @@ const Hero = () => {
               Do more with a business account that comes with top-end financial
               tools and integrations to help grow your business.
             </p>
-            <a
+           {/* <Link
+              to="/SignUp"
               type="button"
-              className="_0OJEu _tuZ1s Hero-module--Hero_header_link--j3FBj"
-              target="_blank"
+              className="cursor-pointer "
+
               href="/signup"
-            >
-              <div className="bg-[#0bce5a] text-white md:block hidden rounded-[5px] tracking-[-0.07px] leading-none max-h-[50px] outline-none overflow-visible py-[14px] px-[32px] relative text-center no-underline w-fit transition-all duration-200 text-[14px] font-medium">
+            > */}
+              <Link to="/SignUp" className="bg-[#0bce5a] cursor-pointer text-white md:block hidden rounded-[5px] tracking-[-0.07px] leading-none max-h-[50px] outline-none py-[14px] px-[32px] relative text-center no-underline w-fit transition-all duration-200 text-[14px] font-medium">
                 Open an account in 10 minutes
-              </div>
-            </a>
+              </Link>
+            {/* </Link> */}
           </header>
           <section className=" flex flex-wrap gap-8 md:mt-[88px] mt-[70px]">
             <a

@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
-import { useState, } from "react";
+import { useState  } from "react";
 import News from "./News";
-// import Accordion from "./reusable/Accordions";
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -22,45 +21,11 @@ const Nav = () => {
     }));
   };
 
-  // const faqItems = [
-  //   {
-  //     title: "Industry",
-  //     content: "We cu and ",
-  //   },
-  //   {
-  //     title: "Customers",
-  //     content: "",
-  //   },
-  //   {
-  //     title: "Products",
-  //     content:
-  //       "You will need government-issued IDs (Including BVN) and your company's incorporation documents.",
-  //   },
-  //   {
-  //     title: "Companies",
-  //     content:
-  //       "We have introduced Two Factor Authentication (2FA) for an extra level of security.",
-  //   },
-  //   {
-  //     title: "Resources",
-  //     content:
-  //       "We have introduced Two Factor Authentication (2FA) for an extra level of security.",
-  //   },
-  //   {
-  //     title: "Country",
-  //     content:
-  //       "We have introduced Two Factor Authentication (2FA) for an extra level of security.",
-  //   },
-  //   {
-  //     title: "Login",
-  //     content: "tgtetaer",
-  //   },
-  //   {
-  //     title: "Open an account",
-  //     content:
-  //       "We have introduced Two Factor Authentication (2FA) for an extra level of security.",
-  //   },
-  // ];
+
+  // useEffect(() => {
+  //   document.body.style.overflow = isOpen ? "hidden" : "auto";
+  // }, [isOpen]);
+  
 
   return (
     <div className="w-full fixed z-[9999]">
@@ -177,25 +142,19 @@ const Nav = () => {
         </nav>
       </div>
 
-      <div className="relative h-screen overflow-visible">
-        {/* News component */}
+      <div className={`relative `}>
         <News />
-
         {/* Mobile accordion */}
 
         <div
           className={`mobile absolute left-0 right-0 top-0 scroll-auto h-screen transform transition-transform duration-500 ease-in-out ${
-            isOpen ? " translate-x-0" : " translate-x-full "
+            isOpen ? " translate-x-0 pointer-events-auto" : " translate-x-full pointer-events-none hidden  "
           }`}
         >
           {isOpen && (
-            // <div className=" w-full h-full">
-
-            //   <Accordion items={faqItems} allowMultiple={false} />
-            // </div>
-
+          
             <nav className="w-full  h-screen">
-              <ul className=" text-[15px]">
+              <ul className=" text-[15px] h-screen bg-[black]">
                 {/* First Link - Accordion */}
                 <li className="border-b  border-b-[#252525]">
                   <div className="flex py-[16px]  justify-center items-center px-[16px] bg-black">
