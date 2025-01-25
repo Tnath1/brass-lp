@@ -22,10 +22,7 @@ const Nav = () => {
   };
 
 
-  // useEffect(() => {
-  //   document.body.style.overflow = isOpen ? "hidden" : "auto";
-  // }, [isOpen]);
-  
+ 
 
   return (
     <div className="w-full fixed z-[9999]">
@@ -435,20 +432,20 @@ const Nav = () => {
 
                 {/* seventh Link - Regular */}
                 <li className="border-b  border-b-[#252525]">
-                  <a
-                    href="#second"
+                  <Link
+                   to="/Login"
                     className="block w-full bg-black text-white p-[16px] hover:text-green-600"
                   >
                     Login
-                  </a>
+                  </Link>
                 </li>
                 <li className="border-b  border-b-[#252525]">
-                  <a
-                    href="#second"
+                  <Link
+                   to="/SignUp"
                     className="block w-full bg-black text-white p-[16px] hover:text-green-600"
                   >
                     Open an account
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </nav>
