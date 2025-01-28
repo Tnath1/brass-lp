@@ -1,7 +1,8 @@
-
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import ScrollToTop from "../components/reusable/ScrollToTop";
+import "../App.css"
+
 const Signup: React.FC = () => {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -30,7 +31,7 @@ const Signup: React.FC = () => {
 
   return (
     <div className="signup-container">
-    <ScrollToTop/>
+      <ScrollToTop />
 
       {/* Navbar Section */}
       <section>
@@ -90,9 +91,9 @@ const Signup: React.FC = () => {
                 <label className="text-[13px] mb-[4px] " htmlFor="firstName">
                   First name
                 </label>
-                <div>
+                <div className="  ">
                   <input
-                    className="py-[10px] px-[12px] w-full "
+                    className="py-[10px] px-[12px] w-full  "
                     type="text"
                     id="firstName"
                     name="firstName"
@@ -282,7 +283,7 @@ const Signup: React.FC = () => {
               <span>
                 <input
                   id="accept-terms"
-                  className="mr-[1rem] mt-[5px]"
+                  className="mr-[1rem] mt-[5px] checked:bg-green-500"
                   type="checkbox"
                 />
               </span>
